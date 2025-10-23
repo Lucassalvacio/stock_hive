@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 
 class EmployeeList extends StatelessWidget {
   final DocumentReference companyRef;
-  const EmployeeList({required this.companyRef, super.key});
+  final String role;
+  const EmployeeList({required this.companyRef, required this.role, super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -1,11 +1,13 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:stock_hive/screens/employee_list.dart';
-import 'package:stock_hive/screens/product_form.dart';
-import 'package:stock_hive/screens/product_list.dart';
-import 'package:stock_hive/screens/vendor_form.dart';
-import 'package:stock_hive/screens/vendor_list.dart';
+import 'package:stock_hive/screens/lists/employee_list.dart';
+import 'package:stock_hive/screens/forms/order_form.dart';
+import 'package:stock_hive/screens/forms/product_form.dart';
+import 'package:stock_hive/screens/lists/order_list.dart';
+import 'package:stock_hive/screens/lists/product_list.dart';
+import 'package:stock_hive/screens/forms/vendor_form.dart';
+import 'package:stock_hive/screens/lists/vendor_list.dart';
 import 'package:stock_hive/services/auth_service.dart';
 
 class CompanyDashboard extends StatefulWidget {
@@ -18,7 +20,7 @@ class CompanyDashboard extends StatefulWidget {
 class _CompanyDashboardState extends State<CompanyDashboard>
     with TickerProviderStateMixin {
   late final TabController _tabController =
-      TabController(length:3, vsync: this, animationDuration: const Duration(milliseconds: 550));
+      TabController(length:4, vsync: this, animationDuration: const Duration(milliseconds: 550));
   String role = 'user';
   DocumentReference? companyRef;
 
@@ -53,6 +55,7 @@ class _CompanyDashboardState extends State<CompanyDashboard>
             Tab(text: 'Products',),
             Tab(text: 'Vendors',),
             Tab(text: 'Employees',),
+            Tab(text: 'Orders',),
           ],
         ),
         leading: IconButton(onPressed: AuthService().logout, icon: const Icon(Icons.logout_rounded)),
@@ -60,7 +63,8 @@ class _CompanyDashboardState extends State<CompanyDashboard>
       body: TabBarView(controller: _tabController, children: [
         ProductList(companyRef: companyRef!, role: role,),
         VendorList(companyRef: companyRef!, role: role,),
-        EmployeeList(companyRef: companyRef!),
+        EmployeeList(companyRef: companyRef!, role: role),
+        OrderList(companyRef: companyRef!, role: role)
       ],
       
       ),
@@ -76,6 +80,13 @@ class _CompanyDashboardState extends State<CompanyDashboard>
                     context,
                     MaterialPageRoute(
                         builder: (_) => VendorForm(companyRef: companyRef!)));
+              } else if (_tabController.index == 2) {
+                
+              } else if (_tabController.index == 3) {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (_) => OrderForm(companyRef: companyRef!)));
               }
             },
             child: const Icon(Icons.add),

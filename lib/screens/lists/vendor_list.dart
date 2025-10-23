@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:stock_hive/screens/vendor_form.dart';
+import 'package:stock_hive/screens/forms/vendor_form.dart';
 
 class VendorList extends StatelessWidget {
   final DocumentReference companyRef;

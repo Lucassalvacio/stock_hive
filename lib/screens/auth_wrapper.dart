@@ -13,7 +13,7 @@ class AuthWrapper extends StatelessWidget {
       stream: FirebaseAuth.instance.authStateChanges(), 
       builder: (context, snapshot){
         if(snapshot.connectionState == ConnectionState.waiting){
-          return const Center(child: CircularProgressIndicator());
+          return const Center(widthFactor: 30, child: CircularProgressIndicator());
         }
         if(snapshot.hasData) {
           return FutureBuilder(
@@ -22,7 +22,7 @@ class AuthWrapper extends StatelessWidget {
               .doc(snapshot.data!.uid)
               .get(), 
             builder: (context, userSnap){
-              if(!userSnap.hasData) return const CircularProgressIndicator();
+              if(!userSnap.hasData) return const Center(widthFactor: 30, child: CircularProgressIndicator(),);
               final role = userSnap.data!['role'];
               if(role =='admin' || role == 'user') return const CompanyDashboard();
               return const Scaffold(body: Center(child: Text('Unknown role')));

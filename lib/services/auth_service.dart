@@ -33,6 +33,7 @@ class AuthService {
       final doc = await userRef.get();
       if(!doc.exists){
         await userRef.set({
+          'companyRef' : '/companies/EC9u2ZAw3JEz6XihzHVR',
           'uid': user.uid,
           'email': user.email,
           'name': user.displayName,
