@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "1088858633283",
+    "project_id": "stockhive-elvara",
+    "storage_bucket": "stockhive-elvara.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1088858633283:android:d17afc679039d0e0ac90f6",
+        "android_client_info": {
+          "package_name": "com.example.stock_hive"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1088858633283-9eirb33defkce3mbgl9elt5h7ovbgal5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.stock_hive",
+            "certificate_hash": "adaa0816d363c2208e3bacf6aa8eed0f703f0ac5"
+          }
+        },
+        {
+          "client_id": "1088858633283-bg7poq142180ifq9fb316dult4n2hapt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDb9qdjuU5QwAZGKj2JYHAT6Kux-6QlbQk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1088858633283-bg7poq142180ifq9fb316dult4n2hapt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1088858633283-fveem443ttut3atukfaa83d7t42srl2g.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.stockHive"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
