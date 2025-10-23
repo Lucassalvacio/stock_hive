@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:stock_hive/api/firebase_notification.dart';
 import 'package:stock_hive/firebase_options.dart';
 import 'package:stock_hive/screens/auth_wrapper.dart';
 
@@ -8,7 +9,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,    
   );
-
+  FirebaseNotification().initNotification();
   runApp(const MyApp());
 }
 
