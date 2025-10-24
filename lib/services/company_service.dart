@@ -11,7 +11,7 @@ class CompanyService {
       .collection('users')
       .doc(uid)
       .get();
-
+  
   return userDoc['companyRef'] as DocumentReference<Map<String, dynamic>>;
 }
 }

@@ -15,7 +15,7 @@ class FirebaseNotification {
     // debugPrint('token $fOMToken');
 
     await FirebaseFirestore.instance
-      .collection('companies/${CompanyService().getCompanyRef()}/users')
+      .collection('users')//'${CompanyService().getCompanyRef()}/users'
       .doc(FirebaseAuth.instance.currentUser!.uid)
       .update({'fcmToken': fOMToken});
   }

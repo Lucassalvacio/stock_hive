@@ -29,11 +29,10 @@ class _CompanyDashboardState extends State<CompanyDashboard>
     super.initState();
     _loadUserData();
   }
-
+  
   Future<void> _loadUserData() async {
     final uid = FirebaseAuth.instance.currentUser!.uid;
-    final userDoc =
-        await FirebaseFirestore.instance.collection('users').doc(uid).get();
+    final userDoc = await FirebaseFirestore.instance.collection('users').doc(uid).get();
     setState(() {
       role = userDoc['role'];
       companyRef = userDoc['companyRef'];
